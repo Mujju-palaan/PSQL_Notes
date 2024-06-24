@@ -1,0 +1,105 @@
+---------Section 1. Querying Data---------------
+
+----------Select________________
+
+select * from employee
+
+insert into employee(first_name,last_name,phone,address) 
+			values ('Mujju','Sheikh',7867837866,'Hyderabad'),('Mohammed','Mujahid',1234567890,'Hyd'),
+					('Abid','Sheikh',9999999999,'Nagpur'),('Afrid','md',888888888,'Bzone');
+	
+ select first_name from employee;
+ 
+ select phone, address from employee;
+ 
+ select first_name || ' ' || last_name from employee;
+ 
+ select first_name || ' ' || last_name as full_name, address from employee;
+ 
+ SELECT now();
+ 
+ -----------Column aliases----------------
+ 
+ Select address as add from employee;
+ 
+ select first_name, last_name as surname from employee;
+ 
+ select last_name surname from employee;  -------- short alias
+ 
+ ------ORDER BY -----------------------
+ 
+ select first_name,last_name from employee order by first_name Asc;
+ 
+ select first_name,last_name from employee order by first_name;
+ 
+ select first_name, last_name from employee order by first_name desc;
+ 
+ select first_name, last_name from employee order by last_name desc;
+ 
+ select first_name, last_name from employee order by last_name asc;
+ 
+ select first_name, last_name from employee order by first_name asc, last_name desc;
+ 
+ select first_name, length(first_name) as len from employee; -----length
+ 
+  select first_name, length(first_name) as len from employee order by len asc;
+  
+  select first_name, length(first_name) as len from employee order by len desc;
+  
+  -------------PostgreSQL ORDER BY clause and NULL
+
+ create table sort_demo(num int);
+ 
+ insert into sort_demo(num) values (1),(2),(3),(4),(null);
+ 
+ select * from sort_demo;
+ 
+ select num from sort_demo order by num;
+ 
+ select num from sort_demo order by num nulls last;
+ 
+ select num from sort_demo order by num nulls first;
+ 
+ select num from sort_demo order by num desc;
+ 
+ select num from sort_demo order by num asc;
+ 
+ select num from sort_demo order by num desc nulls last;
+ 
+ select * from sort_demo order by num asc nulls last;
+ 
+ -------------PostgreSQL SELECT DISTINCT
+
+ create table colors( id serial primary key, bcolor varchar(50), fcolor varchar(50)); 
+ drop table colors;
+ 
+ select* from colors;
+ 
+ insert into colors(bcolor,fcolor) 
+ 	values ('red','red'),
+			('red','red'),
+			('red',null),
+			(null,'red'),
+			(null,null),
+			('green','green'),
+			('blue','blue'),
+			('blue','blue');
+			
+ select id, bcolor,fcolor from colors;
+	
+	
+ select distinct bcolor from colors order by bcolor;
+ 
+ select distinct bcolor,fcolor from colors order by bcolor,fcolor;
+ 
+ select distinct bcolor,fcolor from colors order by bcolor,fcolor nulls last;
+ 
+ select distinct bcolor,fcolor from colors order by bcolor,fcolor desc;
+ 
+ 
+ 
+			
+			
+  
+
+ 
