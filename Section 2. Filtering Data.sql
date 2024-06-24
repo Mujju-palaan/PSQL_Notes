@@ -1,4 +1,4 @@
---------------  Section 2. Filtering Data ---------------
+--------------  Section 2. Filtering Data -------------------and
 
 = ----	Equal
 > ----	Greater than
@@ -19,7 +19,7 @@ NOT	-------Negate the result of other operators
 create table students(id serial primary key, f_name varchar(50) not null, l_name varchar(50) not null,
 					phone bigint not null, address text not null, email text not null, Blood_group text not null);
 					
-select * from students;
+select * from students ;
 drop table student;
 
 insert into students(f_name,l_name,phone,address,email,blood_group) 
