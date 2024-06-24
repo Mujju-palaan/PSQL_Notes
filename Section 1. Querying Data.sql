@@ -1,6 +1,6 @@
 ---------Section 1. Querying Data---------------
 
-----------Select________________
+----------Select___________
 
 select * from employee
 
